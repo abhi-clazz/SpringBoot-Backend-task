@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>saveo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-2">
+        <div class="card">
+            <div class="card-body">
+                <div th:switch="${data}" class="container my-5">
+                   
+                    <div class="col-md-10">
+                        <h2 th:case="null">No Medicine</h2>
+                        <div th:case="*">
+                            <table class="table table-striped table-responsive-md">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>MRP</th>
+                                        <th>stock</th>
+                                        <th>Packing</th>
+                                        <th>Hsncode</th>
+                                        <th>Expiry</th>
+                                        <th>Code</th>
+                                        <th>manufacturer</th>
+                                        <th>Scheme</th>
+                                        <th>Batch</th>
+                                        
+                                        
+                                   
+                                    </tr>
+                                </thead>
+                          
+                                <tbody>
+                                    <tr th:each="med : ${data}">
+                                        <td th:text="${med.id}"></td>
+                                        <td th:text="${med.name}"></td>
+                                                                                <td th:text="${med.mrp}"></td>
+                                                                                <td th:text="${med.stockbalance}"></td>
+                                                                                <td th:text="${med.packing}"></td>
+                                                                                <td th:text="${med.hsnCode}"></td>
+                                                                                <td th:text="${med.expDate}"></td>
+                                                                                <td th:text="${med.uniqueCode}"></td>
+                                                                                <td th:text="${med.manufacturer}"></td>
+                                                                                <td th:text="${med.hsnCode}"></td>
+                                                                                <td th:text="${med.scheme}"></td>
+                                                                                <td th:text="${med.batchNumber}"></td>
+                                                                           
+                                                                                                                                                              
+                                       
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
