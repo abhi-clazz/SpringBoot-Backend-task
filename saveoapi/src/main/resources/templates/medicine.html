@@ -10,7 +10,7 @@
 <body>
     <div class="jumbotron container">
 
-        <form action="#" th:action="@{/getMedicineDetails}"  th:object="${cid}"method="POST">
+        <form action="#" th:action="@{/getMedicineDetails}"  th:object="${cid}"method="GET">
             <input type="text"  th:field="*{id}" placeholder="uniqueID" class="form-control mb-4 col-4">
 
 

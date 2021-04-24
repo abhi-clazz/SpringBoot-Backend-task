@@ -84,20 +84,20 @@ public class SaveoController {
 		return "orderconfirmation";
 		
 	}
-	@RequestMapping(value="/getMedicineDetails", method = RequestMethod.POST)
+	@RequestMapping(value="/getMedicineDetails", method = RequestMethod.GET)
 
-	public String getMedicineDetails(Model model ,@ModelAttribute("cid") SaveoModel cid)
+	public String getMedicineDetails(@RequestParam("id") int id,Model model )
 	{
 		System.out.println("ppp");
-	model.addAttribute( "data",saveoService.getMedicineDetails(cid.getId()));
+	model.addAttribute( "data",saveoService.getMedicineDetails(id));
 		return "MedicineDetails";
 		
 	}
 	
-	@RequestMapping(value="/searchMedicine", method = RequestMethod.POST)
-	public String searchMedicine(Model model ,@ModelAttribute("med") SaveoModel med )
+	@RequestMapping(value="/searchMedicine", method = RequestMethod.GET)
+	public String searchMedicine(@RequestParam("name") String name,Model model  )
 	{
-		model.addAttribute( "meddata",saveoService.searchMedicine(med.getName()));
+		model.addAttribute( "meddata",saveoService.searchMedicine(name));
 		return "result";
 		
 	}

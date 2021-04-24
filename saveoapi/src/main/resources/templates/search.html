@@ -10,7 +10,7 @@
 <body>
     <div class="jumbotron container">
 
-        <form action="#" th:action="@{/searchMedicine}"  th:object="${med}"method="POST">
+        <form action="#" th:action="@{/searchMedicine}"  th:object="${med}"method="GET">
             <input type="text"  th:field="*{name}" placeholder="name" class="form-control mb-4 col-4">
 
 
